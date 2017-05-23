@@ -2,3 +2,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.jumbotron {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQESYXMHzsoTBptv_EvzhgUWHqx2o3-EFpoI-6emd5FGCB4erUUwezRy9Q");
+  background-size: cover;
+}
