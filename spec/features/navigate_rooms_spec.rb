@@ -11,6 +11,6 @@ describe "Navigating events" do
 
     click_link "Back"
 
-    expect(current_path).to eq(event_path)
+    expect(current_path).to eq(events_path)
   end
 end
