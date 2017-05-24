@@ -27,4 +27,28 @@ RSpec.describe Event, type: :model do
       end
   end
 
+  describe "association with user" do
+    let(:user) { create :user }
+
+    it "belongs to a user" do
+      event = user.events.new(name: "Testing belongs to")
+
+      expect(event.user).to eq(user)
+    end
+  end
+
+  describe "association with subject" do
+    let(:event) { create :event }
+
+    let(:subject1) { create :subject, name: "Bootstrap", events: [event] }
+    let(:subject2) { create :subject, name: "HTML", events: [event] }
+    let(:subject3) { create :subject, name: "Ruby", events: [event] }
+
+    it "has subjects" do
+      expect(event.subjects).to include(subject1)
+      expect(event.subjects).to include(subject2)
+      expect(event.subjects).to include(subject3)
+    end
+  end
+
 end
