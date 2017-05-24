@@ -1,4 +1,4 @@
-# spec/factories/rooms.rb
+# spec/factories/events.rb
 
 FactoryGirl.define do
   factory :event do
@@ -8,13 +8,11 @@ FactoryGirl.define do
     price             { Faker::Commerce.price }
     capacity          3
     starts_at         { Faker::Date.forward(1) }
-    description       { Faker::Date.forward(2) }
+    ends_at           { Faker::Date.forward(2) }
     includes_food     true
     includes_drinks   true
     active            true
-    has_heating       true
-    has_internet      true
-    user_id           { build(:user) }
+    user              { build(:user) }
 
     trait :active do
       active true
