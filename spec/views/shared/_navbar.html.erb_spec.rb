@@ -1,6 +1,26 @@
 require 'rails_helper'
 
 describe "shared/_navbar.html.erb" do
+
+  context "without sign-in" do
+
+    it "renders login link" do
+      render
+      expect(rendered).to have_link "Log In"
+    end
+  end
+
+  context "without sign in" do
+
+    it "renders sign up link" do
+      render
+      expect(rendered).to have_link "Sign Up"
+    end
+  end
+end
+
+
+describe "shared/_navbar.html.erb" do
   before { sign_in user }
 
   context "without profile" do
