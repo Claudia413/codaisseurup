@@ -8,11 +8,19 @@
   background-size: cover;
 }
 
+body {
+  min-height: 100vh;
+}
+
 footer {
   background-color: #58739e;
   margin-top: 20px;
   padding: 5px;
+  margin-top: 20px;
   color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
   h6 {
     font-size: 14px;
     font-weight: bold;
