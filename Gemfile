@@ -43,6 +43,8 @@ gem 'devise', '~> 4.2'
 
 gem 'carrierwave', '0.11.2'
 
+gem "font-awesome-rails"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
