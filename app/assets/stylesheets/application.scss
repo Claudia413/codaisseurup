@@ -10,7 +10,7 @@
 
 footer {
   background-color: #58739e;
-  margin-top: 5px;
+  margin-top: 20px;
   padding: 5px;
   color: white;
   h6 {
@@ -29,4 +29,22 @@ footer {
 
 .social-button{
   margin: 0 10px;
+}
+
+.image-round {
+  border-radius: 20px;
+  &.about{
+    height: 200px;
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
+
+.center-content{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
 }
