@@ -7,6 +7,18 @@ RSpec.describe Event, type: :model do
     it { is_expected.to validate_length_of(:description).is_at_most(500) }
   end
 
+  describe "association with registration" do
+    let(:guest_user) { create :user, email: "guest@user.com" }
+    let(:host_user) { create :user, email: "host@user.com" }
+
+    let!(:event) { create :event, user: host_user }
+    let!(:registration) { create :registration, event: event, user: guest_user }
+
+    it "has guests" do
+      expect(event.guests).to include(guest_user)
+    end
+  end
+
   describe "#bargain?" do
       let(:bargain_event) { create :event, price: 2 }
       let(:non_bargain_event) { create :event, price: 200 }

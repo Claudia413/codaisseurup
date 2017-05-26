@@ -5,6 +5,9 @@ Subject.destroy_all
 User.destroy_all
 
 claudia = User.create!(email: "claudia@me.com", password: "test12")
+miriam = User.create(email: "miriam@codaisseurbnb.com", password: "abcd1234")
+wouter = User.create(email: "wouter@codaisseurbnb.com", password: "abcd1234")
+matt = User.create(email: "matt@codaisseurbnb.com", password: "abcd1234")
 
 ruby = Subject.create(name: "Ruby")
 ruby_on_rails = Subject.create(name: "Ruby on Rails")
@@ -17,4 +20,9 @@ front_end = Subject.create(name: "Front-end development")
 back_end = Subject.create(name: "Back-end development")
 syntax = Subject.create(name: "Syntax")
 
-event = Event.create!(name: "Gittyhub", description:"Let's add some random text here to describe this awesome event Gittyhub! Gittyhub's first meeting for people who are learning to use Github and sometime have no idea what they are doing and just hope it all works out if they press a button.",  location:"Singel 542, 1B, 1234AB Amsterdam, the Netherlands", price: 0, capacity: 25, includes_food: false, includes_drinks: true, starts_at: 1.day.from_now, ends_at: 2.days.from_now, active: true, subjects:[ruby, ruby_on_rails, back_end],  user: claudia)
+event1 = Event.create!(name: "Gittyhub", description:"Let's add some random text here to describe this awesome event Gittyhub! Gittyhub's first meeting for people who are learning to use Github and sometime have no idea what they are doing and just hope it all works out if they press a button.",  location:"Singel 542, 1B, 1234AB Amsterdam, the Netherlands", price: 0, capacity: 25, includes_food: false, includes_drinks: true, starts_at: 1.day.from_now, ends_at: 2.days.from_now, active: true, subjects:[ruby, ruby_on_rails, back_end],  user: claudia)
+
+event2 = Event.create!(name: "Tada", description:"Zoof",  location:"Singel 542, 1B, 1234AB Amsterdam, the Netherlands", price: 0, capacity: 25, includes_food: false, includes_drinks: true, starts_at: 1.day.from_now, ends_at: 2.days.from_now, active: true, subjects:[ruby, ruby_on_rails, back_end],  user: wouter)
+
+Registration.create(event: event1, user: claudia, price: 50, total: 100, status: true)
+Registration.create(event: event2, user: wouter, price: 50, total: 200, status: true)
