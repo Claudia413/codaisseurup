@@ -30,11 +30,11 @@ class EventsController < ApplicationController
   end
 
   def edit
-    if current_user.id == @event.user.id
-    @photos = @event.photos
-  else
-    redirect_to root_path, notice: "You don't have permission to edit this page."
-  end
+      if current_user.id == @event.user.id
+        @photos = @event.photos
+    else
+      redirect_to root_path, notice: "You don't have permission to edit this page."
+    end
   end
 
   def update

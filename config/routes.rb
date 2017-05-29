@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :events do
     resources :registrations, only: [:create]
   end
+  resources :photos
 end
