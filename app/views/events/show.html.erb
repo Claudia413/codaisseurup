@@ -36,6 +36,11 @@
       <p> Event serves drinks: <%= @event.includes_drinks %></p>
       <p> Event serves food: <%= @event.includes_food %></p>
 
+      <!-- Photos -->
+      <h4>Photos</h4>
+      <% @event.photos.each do |photo| %>
+        <%= image_tag photo.image %>
+      <% end %>
 
       <!-- Themes -->
       <h4>Subjects</h4>
