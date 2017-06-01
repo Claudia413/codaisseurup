@@ -9,6 +9,12 @@ class Event < ApplicationRecord
   validates :starts_at, presence: true
   validates :ends_at, presence: true
 
+  def self.alphabetical
+    order(name: :asc)
+  end
+
+  scope :active, -> { where(active: true)}
+
   def bargain?
     price < 5
   end

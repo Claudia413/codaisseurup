@@ -29,6 +29,16 @@ RSpec.describe Event, type: :model do
       end
   end
 
+  describe ".alphabetical" do
+      let!(:event1) { create :event, name: "Bonus" }
+      let!(:event2) { create :event, name: "Alternative" }
+      let!(:event3) { create :event, name: "Cascading" }
+
+      it "returns a sorted array of events by name in ascending order" do
+        expect(Event.alphabetical).to eq [event2, event1, event3]
+      end
+  end
+
   describe ".order_by_price" do
       let!(:event1) { create :event, price: 100 }
       let!(:event2) { create :event, price: 300 }
